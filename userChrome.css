@@ -1,0 +1,81 @@
+:root {
+    --arrowpanel-menuitem-padding: 4px 8px !important;
+    /* --lwt-tab-line-color: white !important; */
+    --tab-border-radius: 0;
+    --inline-tab-padding: 12px !important;
+    /* --tab-selected-bgcolor: transparent !important; */
+}
+
+/*** Tighten up drop-down/context/popup menu spacing (8 Sep 2021) ***/
+menupopup:not(.in-menulist)>menuitem,
+menupopup:not(.in-menulist)>menu {
+    padding-block: 4px !important;
+    /* reduce to 3px, 2px, 1px or 0px as needed */
+    min-height: unset !important;
+    /* v92.0 - for padding below 4px */
+}
+
+/* Toolbar */
+toolbox {
+    display: block !important;
+}
+
+#navigator-toolbox {
+    border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent) !important;
+    transition: background-color 250ms ease-out !important;
+}
+
+#nav-bar {
+    border-top: 1px solid color-mix(in srgb, currentColor 10%, transparent) !important;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent) !important;
+}
+
+#nav-bar:not(:has([focused="true"])) {
+    height: 0 !important;
+    min-height: 0 !important;
+    border: 0 !important;
+}
+
+#nav-bar:not([tabs-hidden="true"]) {
+    position: absolute !important;
+    z-index: 1 !important;
+    width: 100% !important;
+}
+
+/* Tabs */
+#tabbrowser-tabs {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.tabbrowser-tab {
+    padding: 0 !important;
+    font-size: 1em !important;
+}
+
+.tabbrowser-tab:not(:hover) .tab-close-button {
+    display: none !important;
+}
+
+.tabbrowser-tab:is([pinned], [fadein]) {
+    max-width: 100% !important;
+}
+
+.tab-background {
+    border-radius: 0 0 0 0 !important;
+    margin: 0px !important;
+    padding-block: 2em 0 !important;
+}
+
+.tab-background[selected]:not([multiselected]):-moz-lwtheme {
+    outline: none !important;
+    background-color: transparent !important;
+}
+
+.tabbrowser-tab:not(:only-of-type) .tab-background[selected]:not([multiselected]):-moz-lwtheme {
+    background-color: var(--tab-selected-bgcolor) !important;
+    border-inline: 1px solid color-mix(in srgb,
+            currentColor 20%,
+            transparent) !important;
+}
+
